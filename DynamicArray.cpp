@@ -74,8 +74,6 @@ DynamicArray &DynamicArray::operator=(DynamicArray &&other) {
         clear();
         mas = other.mas;
         size = other.size;
-
-       // other.mas = nullptr;
         other.size = 0;
    // }
     return *this;
