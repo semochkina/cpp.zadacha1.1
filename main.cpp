@@ -10,5 +10,6 @@ int main() {
 
     std::cout << "!!! " << ddd << "\n";
 
+	std::cin.get();
     return 0;
 }

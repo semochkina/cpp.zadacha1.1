@@ -53,29 +53,29 @@ void DynamicArray::resize(int newSize) {
     int *masOld = mas;
     int sizeOld = size;
     init(newSize, 0);
-    for (int i = 0; i < std::min(sizeOld, newSize); i++) mas[i] = masOld[i];
+    for (int i = 0; i < fmin(sizeOld, newSize); i++) mas[i] = masOld[i];
 //    std::copy(masOld, masOld + std::min(sizeOld, newSize), mas);
     delete[] masOld;
 }
 
 DynamicArray &DynamicArray::operator=(const DynamicArray &other) {
-   // if (this != &other) {
+   if (this != &other) {
         // kopiruem
         clear();
         init(other.size, 0);
         for (int i = 0; i < size; i++) mas[i] = other.mas[i];
-    //}
+    }
     return *this;
 }
 
 DynamicArray &DynamicArray::operator=(DynamicArray &&other) {
-   // if (this != &other) {
+    if (this != &other) {
         // peremeshenie
         clear();
         mas = other.mas;
         size = other.size;
         other.size = 0;
-   // }
+    }
     return *this;
 }
 
